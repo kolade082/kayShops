@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Add a white background to the layer list -->
+    <item android:drawable="@android:color/white"/>
+
+    <!-- Add a center placeholder item to the layer list -->
+    <item
+        android:drawable="@android:color/transparent"
+        android:gravity="center"/>
+
+    <!-- Add the first image to the left side of the center placeholder -->
+    <item
+        android:drawable="@drawable/logo"
+        android:gravity="center_vertical|left"
+        android:left="10dp"
+        android:width="200dp"
+        android:height="200dp"/>
+
+    <!-- Add the second image to the right side of the center placeholder -->
+    <item
+        android:drawable="@drawable/shop"
+        android:gravity="center_vertical|right"
+        android:right="10dp"
+        android:width="200dp"
+        android:height="200dp"/>
+
+</layer-list>
+
+

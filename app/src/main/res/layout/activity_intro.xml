@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The RelativeLayout is used to contain all the UI elements on the screen. -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntroActivity">
+
+    <!-- The LinearLayout contains the logo and app name and.It also centers its contents horizontally and vertically in the parent RelativeLayout. -->
+    <LinearLayout
+        android:id="@+id/logos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true">
+
+<!-- This displays the logo -->
+        <ImageView
+            android:id="@+id/logoView"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- This displays the app name -->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shops"
+            android:textSize="34sp"
+            android:textStyle="italic"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="-25dp"/>
+
+    </LinearLayout>
+
+    <!-- The ProgressBar is below the linear layout containing the logo and and app name,
+    Its visibility is initially set to "gone" so it doesn't appear until necessary. -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/logos"
+        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The RelativeLayout is used to contain all the UI elements on the screen. -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user.UserActivity">
+
+  <!-- The FrameLayout contains the main content of the activity and
+  It fills the entire screen except for the BottomNavigationView. -->
+  <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/container"
+      android:layout_above="@+id/bottomNav" />
+
+  <!-- The BottomNavigationView is a standard navigation bar at the bottom of the screen,
+  It is used to navigate between different parts of the app. -->
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/bottomNav"
+      android:layout_alignParentBottom="true"
+      app:menu="@menu/bottom_nav"/>
+
+</RelativeLayout>

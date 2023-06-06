@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txtAddressBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Address Book"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/txtStreet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtAddressBook"
+            android:text="Street Address"
+            android:textStyle="italic"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/edtAddressStreet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtStreet"
+            android:layout_margin="20dp"
+            android:hint="Street Address " />
+
+        <TextView
+            android:id="@+id/txtCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtAddressStreet"
+            android:text="City"
+            android:textStyle="italic"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/edtAddressCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtCity"
+            android:layout_margin="20dp"
+            android:hint="City " />
+
+        <TextView
+            android:id="@+id/txtCounty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtAddressCity"
+            android:text="County"
+            android:textStyle="italic"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/edtAddressCounty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtCounty"
+            android:layout_margin="20dp"
+            android:hint="County " />
+
+        <TextView
+            android:id="@+id/txtPostCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtAddressCounty"
+            android:text="Post Code"
+            android:textStyle="italic"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/edtAddressPostCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtPostCode"
+            android:layout_margin="20dp"
+            android:hint="Post Code " />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtAddressPostCode"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/black"
+            android:text="Save" />
+    </RelativeLayout>
+</ScrollView>

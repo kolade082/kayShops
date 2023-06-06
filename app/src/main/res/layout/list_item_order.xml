@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/orderItemImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#878484"
+        android:src="@drawable/placeholder"/>
+
+    <TextView
+        android:id="@+id/orderNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:text="OrderNumber"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/orderItemTotalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:text="TotalPrice"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/orderItemStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Status"
+        android:paddingTop="8dp" />
+
+</LinearLayout>

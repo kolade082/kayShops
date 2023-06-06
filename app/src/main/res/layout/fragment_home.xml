@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user.HomeFragment">
+
+    <SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/another_layout"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:background="#D8D2D2"
+        app:layout_constraintTop_toBottomOf="@id/search_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints" >
+
+        <TextView
+            android:id="@+id/nikeTextView"
+            android:layout_width="49dp"
+            android:layout_height="119dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:rotation="270"
+            android:text="NIKE"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/bapeTextView"
+            android:layout_width="49dp"
+            android:layout_height="119dp"
+            android:gravity="center"
+            android:rotation="270"
+            android:text="BAPE"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/nikeTextView"
+            app:layout_constraintEnd_toEndOf="@id/nikeTextView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@id/nikeTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.783" />
+
+        <View
+            android:id="@+id/bapeTextViewLine"
+            android:layout_width="49dp"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/bapeTextView"
+            app:layout_constraintStart_toStartOf="@+id/bapeTextView"
+            app:layout_constraintEnd_toEndOf="@+id/bapeTextView" />
+
+        <TextView
+            android:id="@+id/pumaTextView"
+            android:layout_width="49dp"
+            android:layout_height="119dp"
+            android:gravity="center"
+            android:rotation="270"
+            android:text="PUMA"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/bapeTextView"
+            app:layout_constraintEnd_toEndOf="@id/bapeTextView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@id/bapeTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <View
+            android:id="@+id/pumaTextViewLine"
+            android:layout_width="49dp"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/pumaTextView"
+            app:layout_constraintStart_toStartOf="@+id/pumaTextView"
+            app:layout_constraintEnd_toEndOf="@+id/pumaTextView" />
+
+        <TextView
+            android:id="@+id/otherTextView"
+            android:layout_width="69dp"
+            android:layout_height="119dp"
+            android:gravity="center"
+            android:rotation="270"
+            android:text="OTHERS"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/pumaTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.545"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <View
+            android:id="@+id/otherTextViewLine"
+            android:layout_width="49dp"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/otherTextView"
+            app:layout_constraintStart_toStartOf="@+id/otherTextView"
+            app:layout_constraintEnd_toEndOf="@+id/otherTextView" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/welcomeTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Hello, Kay"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/another_layout"
+        app:layout_constraintTop_toBottomOf="@+id/search_view" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Lets find the best trainers for you"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/welcomeTxtView"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeTxtView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="42dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/baseline_filter_list_24"
+        app:layout_constraintStart_toEndOf="@+id/another_layout"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoryRecycler"
+        android:layout_width="218dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productRecycler"
+        android:layout_width="355dp"
+        android:layout_height="288dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/categoryRecycler" />
+
+    <LinearLayout
+        android:id="@+id/custom_button"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#0C0C0C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productRecycler"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp">
+
+
+        <TextView
+            android:id="@+id/checkTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="GO TO BASKET"
+            android:textColor="@color/white" />
+
+        <ImageButton
+            android:id="@+id/cart_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@null"
+            android:contentDescription="@string/cart_icon"
+            android:src="@drawable/baseline_add_shopping_cart_24"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

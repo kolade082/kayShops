@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/fullNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Full Name"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"/>
+
+    <ImageView
+        android:id="@+id/profilePictureImageView"
+        android:layout_marginTop="20dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/profile_picture"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/ordersTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical|start|end"
+        android:text="Orders"
+        android:textSize="20sp"
+        android:textColor="#222121"/>
+
+    <!-- the layout for profile -->
+
+    <TextView
+        android:id="@+id/profileTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textSize="20sp"
+        android:textColor="#222121"
+        android:layout_marginTop="16dp"
+        android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical|start|end"/>
+
+    <!-- the layout to change password -->
+
+    <TextView
+        android:id="@+id/changePasswordTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change Password"
+        android:textSize="20sp"
+        android:textColor="#222121"
+        android:layout_marginTop="16dp"
+        android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical|start|end"/>
+
+    <!-- the layout for address book -->
+
+    <TextView
+        android:id="@+id/addressTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address Book"
+        android:textSize="20sp"
+        android:textColor="#222121"
+        android:layout_marginTop="16dp"
+        android:drawableEnd="@drawable/baseline_keyboard_arrow_right_24"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical|start|end"/>
+
+    <!-- this displays the log out button-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/black"
+        android:padding="16dp"/>
+
+</LinearLayout>
+
+
