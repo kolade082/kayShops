@@ -7,11 +7,8 @@ Welcome to **KayShops**, an Android-based e-commerce application designed to pro
 ## Table of Contents
 
 - [Features](#features)
-- [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
 
 ---
 
