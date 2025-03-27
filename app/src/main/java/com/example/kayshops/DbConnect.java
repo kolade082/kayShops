@@ -103,7 +103,7 @@ public class DbConnect extends SQLiteOpenHelper {
                 + fullName + " TEXT, " + password + " TEXT, " + dateOfBirth + " TEXT, "
                 + email + " TEXT, " + phoneNumber + " TEXT, " + streetAddress + " TEXT, "
                 + cityAddress + " TEXT, " + countyAddress + " TEXT, " + postcode + " TEXT, "
-                + userType + " TEXT DEFAULT 'user', "
+                + userType + " TEXT DEFAULT 'admin', "
                 + userDateCreated + " TEXT, " + userDateUpdated + " TEXT)";
         // create category table
         String queryCategories = "CREATE TABLE " + dbTableCategories + "(" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -130,6 +130,7 @@ public class DbConnect extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(queryProducts);
         sqLiteDatabase.execSQL(queryOrders);
         sqLiteDatabase.execSQL(queryOrderProducts);
+        sqLiteDatabase.execSQL("PRAGMA foreign_keys=ON;");
     }
 
     /**
@@ -168,7 +169,6 @@ public class DbConnect extends SQLiteOpenHelper {
         values.put(postcode, user.getPostcode());
         values.put(userDateCreated, getCurrentDateTime());
         database.insert(dbTableUsers, null, values);
-        database.close();
     }
 
     // add a new product to the database
@@ -186,7 +186,6 @@ public class DbConnect extends SQLiteOpenHelper {
         values.put(productDateUpdated, product.getProductDateUpdated());
         values.put(categoryId, product.getCategoryId());
         database.insert(dbTableProducts, null, values);
-        database.close();
     }
 
     // add a new category to the database
@@ -195,7 +194,6 @@ public class DbConnect extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(categoryName, category.getCategoryName());
         database.insert(dbTableCategories, null, values);
-        database.close();
     }
 
     // add a new order to the database
@@ -213,7 +211,6 @@ public class DbConnect extends SQLiteOpenHelper {
 
         // Insert the new order into the database
         database.insert(dbTableOrders, null, values);
-        database.close();
     }
 
 
@@ -305,7 +302,7 @@ public class DbConnect extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         cursor.close();
-        db.close();
+//        db.close();
         return users;
     }
     // this is used to get all categories from the database
@@ -352,7 +349,7 @@ public class DbConnect extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         cursor.close();
-        db.close();
+//        db.close();
         return products;
     }
 
@@ -465,7 +462,7 @@ public class DbConnect extends SQLiteOpenHelper {
         String currentDateTime = getCurrentDateTime();
         values.put(userDateUpdated, currentDateTime);
 
-        int rowsAffected = database.update("Users", values, "id = ?",
+        int rowsAffected = database.update(dbTableUsers, values, "id = ?",
                 new String[]{String.valueOf(user.getUserID())});
         return rowsAffected > 0;
     }
@@ -482,7 +479,7 @@ public class DbConnect extends SQLiteOpenHelper {
         String currentDateTime = getCurrentDateTime();
         values.put(userDateUpdated, currentDateTime);
 
-        int rowsAffected = database.update("Users", values, "id = ?",
+        int rowsAffected = database.update(dbTableUsers, values, "id = ?",
                 new String[]{String.valueOf(user.getUserID())});
         return rowsAffected > 0;
     }
@@ -496,9 +493,9 @@ public class DbConnect extends SQLiteOpenHelper {
         String hashedPassword = hashPassword(newPassword);
         values.put(password, hashedPassword);
 
-        int rowsAffected = db.update("Users", values, "id = ?",
+        int rowsAffected = db.update(dbTableUsers, values, "id = ?",
                 new String[]{String.valueOf(userID)});
-        db.close();
+//        db.close();
 
         return rowsAffected > 0;
     }
@@ -507,13 +504,13 @@ public class DbConnect extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         String hashedInputPassword = hashPassword(inputPassword);
 
-        Cursor cursor = db.query("Users", new String[]{password}, "id = ?",
+        Cursor cursor = db.query(dbTableUsers, new String[]{password}, "id = ?",
                 new String[]{String.valueOf(userId)}, null, null, null);
 
         if (cursor != null && cursor.moveToFirst()) {
             String storedPassword = cursor.getString(cursor.getColumnIndexOrThrow(password));
             cursor.close();
-            db.close();
+//            db.close();
             return hashedInputPassword.equals(storedPassword);
         }
 
